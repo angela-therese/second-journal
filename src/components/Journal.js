@@ -10,6 +10,7 @@ export const  Journal = () => (
         <h2>Journal Entries</h2>
         <article className="entries">
         <EntryCard />
+        
 
         </article>
     </>
