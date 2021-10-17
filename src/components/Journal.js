@@ -1,12 +1,14 @@
 import React from "react";
 import "./Journal.css";
 import { EntryCard } from "./entry/EntryCard";
-import { PropsAndState } from "../PropsAndState";
+// import { PropsAndState } from "..PropsAndState/PropsAndState";
+import { ApplicationViews } from "./ApplicationViews";
 
 
 export const  Journal = () => (
     <>
-        <h1>The Second Journal</h1>
+       <ApplicationViews />
+        {/* <h1>The Second Journal</h1>
         <p>Because one journal isn't enough</p>
         <PropsAndState yourName={"Angie"} />
         <h3>Journal Entries</h3>
@@ -14,6 +16,6 @@ export const  Journal = () => (
         <EntryCard />
         
 
-        </article>
+        </article> */}
     </>
 )
