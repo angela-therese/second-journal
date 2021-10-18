@@ -1,12 +1,12 @@
 import React from "react";
 import "./Entry.css"
 
-export const EntryCard = () => (
+export const EntryCard = ({ entry }) => (
 
     <section className="entry">
-        <h4 className="entry__title">Trying to Remember</h4>
-        <h6 className="entry__date">10/09/2021</h6>
-        <p className="entry__text">An elephant never forgets but a middle-aged woman does.</p>
+        <h4 className="entry__title">{entry.title}</h4>
+        <h6 className="entry__date">{entry.date}</h6>
+        <p className="entry__text">{entry.text}</p>
     </section>
 
 )
