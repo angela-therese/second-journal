@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { EntryProvider } from "./entry/EntryProvider"
 import { EntryList } from "./entry/EntryList"
+import { EntryForm } from "./entry/EntryForm"
 import { UserProvider } from "./user/UserProvider"
 import { UserList } from "./user/UserList"
 
@@ -23,6 +24,10 @@ export const ApplicationViews = () => {
                 <Route exact path="/entries">
                     <EntryList />
                 </Route>
+                <Route exact path="/entries/create">
+                    <EntryForm />
+                </Route>
+
                 </UserProvider>
             </EntryProvider>
 
