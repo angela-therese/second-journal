@@ -9,8 +9,8 @@ export const EntryProvider = (props) => {
 
     const getEntries = () => {
         return fetch("http://localhost:8088/entries")
-        .then(res => res.json())
-        .then(setEntries)
+            .then(res => res.json())
+            .then(setEntries)
     }
 
     const addEntry = entryObj => {
@@ -21,7 +21,20 @@ export const EntryProvider = (props) => {
             },
             body: JSON.stringify(entryObj)
         })
-        .then(getEntries)
+            .then(getEntries)
+    }
+
+
+    const getEntryById = (id) => {
+        return fetch(`http://localhost:8088/entries/${id}?_expand=user`)
+            .then(res => res.json())
+    }
+
+    const deleteEntry = entryId => {
+        return fetch(`http://localhost:8088/entries/${entryId}`, {
+            method: "DELETE"
+        })
+            .then(getEntries)
     }
 
     /*
@@ -34,7 +47,7 @@ export const EntryProvider = (props) => {
     */
     return (
         <EntryContext.Provider value={{
-           entries, getEntries, addEntry
+            entries, getEntries, addEntry, getEntryById, deleteEntry
         }}>
             {props.children}
         </EntryContext.Provider>

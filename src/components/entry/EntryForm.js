@@ -59,7 +59,7 @@ export const EntryForm = () => {
             addEntry({
                 title: entry.title,
                 text: entry.text,
-                user: parseInt(intUserId)
+                userId: parseInt(intUserId)
             })
             
                 .then(() => history.push("/entries"))

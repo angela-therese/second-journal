@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom"
 
 export const EntryList = () => {
   // This state changes when `getEntries()` is invoked below
-  const { entries, getEntries } = useContext(EntryContext)
+  const { entries, getEntries, deleteEntries } = useContext(EntryContext)
   const { users, getUsers } = useContext(UserContext)
   const history = useHistory()
 

@@ -4,6 +4,7 @@ import { Home } from "./Home"
 import { EntryProvider } from "./entry/EntryProvider"
 import { EntryList } from "./entry/EntryList"
 import { EntryForm } from "./entry/EntryForm"
+import { EntryDetail } from "./entry/EntryDetails"
 import { UserProvider } from "./user/UserProvider"
 import { UserList } from "./user/UserList"
 
@@ -20,14 +21,16 @@ export const ApplicationViews = () => {
 
             {/* Render the Entry list when http://localhost:3000/entries */}
             <EntryProvider>
-               <UserProvider>
-                <Route exact path="/entries">
-                    <EntryList />
-                </Route>
-                <Route exact path="/entries/create">
-                    <EntryForm />
-                </Route>
-
+                <UserProvider>
+                    <Route exact path="/entries">
+                        <EntryList />
+                    </Route>
+                    <Route exact path="/entries/create">
+                        <EntryForm />
+                    </Route>
+                    <Route exact path="/entries/detail/:entryId(\d+)">
+                        <EntryDetail />
+                    </Route>
                 </UserProvider>
             </EntryProvider>
 
